@@ -169,7 +169,7 @@ function renderProductsInCarShopping() {
   const producsToRender = selectedProdcuts
     .map((e) => {
       return `
-    <div class="shopping-cart">
+    <div id="${e.id}" class="shopping-cart">
             <figure>
               <img
                 src="${e.imgUrl}"
@@ -179,7 +179,7 @@ function renderProductsInCarShopping() {
             </figure>
             <p>${e.name}</p>
             <p>${e.price}</p>
-            <img src="/Platzi_YardSale_Icons/icon_close.png" alt="" />
+            <img class="deleteProduct" id="${e.id}" src="/Platzi_YardSale_Icons/icon_close.png" alt="" />
     </div>
     `;
     })
@@ -191,6 +191,15 @@ function renderProductsInCarShopping() {
   const totalPrice = productsPrice.reduce((acc, curr) => acc + curr);
   shoppingCarProductsContainer.innerHTML = producsToRender;
   summaryTotal.innerText = `$${totalPrice}`;
+
+  const deleteProduct = $(".deleteProduct");
+  deleteProduct.addEventListener("click", (element) => {
+    console.log("entro");
+    const indexProd = selectedProdcuts.findIndex(
+      (e) => e.id == element.target.id
+    );
+    selectedProdcuts.splice(indexProd, 1);
+  });
 }
 
 renderProducts(productList);
