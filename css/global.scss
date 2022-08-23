@@ -1,0 +1,52 @@
+$white: #ffffff;
+$black: #000000;
+$very-light-pink: #c7c7c7;
+$text-input-field: #f7f7f7;
+$hospital-green: #acd9b2;
+$sm: 14px;
+$md: 16px;
+$lg: 18px;
+
+@mixin listaNavBar {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    overflow-x: hidden;
+
+}
+
+
+
+aside {
+    width: 360px;
+    // padding: 24px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: $white;
+    transition: all 0.5s;
+}
+
+.inactive {
+    display: none;
+}
+
+.hide__aside {
+    right: -800px;
+}
+
+.hide__mobileMenu {
+    left: -800px !important;
+}

@@ -1,0 +1,462 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  overflow-x: hidden;
+}
+
+aside {
+  width: 360px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #ffffff;
+  transition: all 0.5s;
+}
+
+.inactive {
+  display: none;
+}
+
+.hide__aside {
+  right: -800px;
+}
+
+.hide__mobileMenu {
+  left: -800px !important;
+}
+
+header {
+  position: relative;
+}
+
+.navBar {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 60px;
+  padding: 6px 18px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #c7c7c7;
+  background-color: #ffffff;
+}
+.navBar__menuRes--logo {
+  display: none;
+}
+.navBar ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+.navBar ul li {
+  margin-left: 24px;
+}
+.navBar ul a {
+  text-decoration: none;
+  color: #000000;
+}
+.navBar__left {
+  display: flex;
+}
+.navBar__left__logo {
+  width: 150px;
+}
+.navBar__left ul {
+  margin-left: 32px;
+}
+.navBar__left ul li {
+  border-radius: 8px;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid transparent;
+}
+.navBar__left ul li:hover {
+  border: 1px solid #acd9b2;
+}
+.navBar__left ul li a {
+  color: #c7c7c7;
+}
+.navBar__left ul li a:hover {
+  color: #acd9b2;
+}
+.navBar__right {
+  display: flex;
+  justify-content: space-between;
+}
+.navBar__right__email {
+  cursor: pointer;
+  color: #c7c7c7;
+}
+.navBar__right__email:hover {
+  color: #acd9b2;
+}
+.navBar__right__shopping--car {
+  position: relative;
+  cursor: pointer;
+}
+.navBar__right__shopping--car div {
+  width: 16px;
+  height: 16px;
+  background-color: #acd9b2;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: -6px;
+  right: -3px;
+}
+
+.desktop--menu {
+  position: absolute;
+  z-index: 0;
+  top: 54px;
+  right: 60px;
+  width: 154px;
+  height: auto;
+  padding: 20px 20px 0 20px;
+  border: 1px solid #c7c7c7;
+  box-shadow: 2px 2px 10px #c7c7c7;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+.desktop--menu ul {
+  list-style: none;
+  /*Para quitarle los puntos*/
+  padding: 0;
+  margin: 0;
+}
+.desktop--menu ul li {
+  text-align: end;
+}
+.desktop--menu ul li:not(:last-child) {
+  font-weight: bold;
+}
+.desktop--menu ul li:last-child {
+  padding-top: 20px;
+  border-top: 1px solid #acd9b2;
+}
+.desktop--menu ul li:last-child a {
+  color: #acd9b2;
+}
+.desktop--menu ul li a {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  /*Hay que colocarle que sea inline-block para que se deje colocar margin por que si no, no nos*/
+  /*dejaria por ser, el anchor, un tipo inline solamente*/
+  margin-bottom: 20px;
+}
+
+.mobile--menu {
+  position: fixed;
+  left: 0;
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  background-color: #ffffff;
+}
+.mobile--menu a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  height: 50%;
+}
+.mobile--menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+.mobile--menu ul:nth-child(1) {
+  border-bottom: 1px solid #c7c7c7;
+}
+.mobile--menu ul:last-child {
+  bottom: 0;
+}
+.mobile--menu ul li {
+  margin-bottom: 24px;
+}
+.mobile--menu .mobile--menu__email {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 500;
+}
+.mobile--menu .mobile--menu__sign-out {
+  font-size: 14px;
+  color: #acd9b2;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .navBar__menuRes--logo {
+    display: block;
+    width: 64px;
+    height: 34px;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+  .navBar__left ul {
+    display: none;
+  }
+  .navBar__right ul li:first-child {
+    display: none;
+  }
+  .desktop--menu {
+    display: none;
+  }
+}
+@media (min-width: 640px) {
+  .mobile--menu {
+    display: none;
+  }
+}
+.carDetail {
+  padding: 24px;
+}
+.carDetail__tittle-container {
+  display: flex;
+  margin-bottom: 40px;
+}
+.carDetail__tittle-container img {
+  transform: rotate(180deg);
+  margin-right: 14px;
+}
+.carDetail__tittle-container .tittle {
+  font-size: 18px;
+}
+.carDetail__my-order-content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+}
+.carDetail__my-order-content .shopping-cart {
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; */
+  /*--------modo grid------*/
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  /*la mitad va a tomar un espacio de 1fr*/
+  gap: 16px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.carDetail__my-order-content .shopping-cart p {
+  /*MODO GRID*/
+  align-self: center;
+}
+.carDetail__my-order-content .shopping-cart p:nth-child(2) {
+  color: #c7c7c7;
+  /* margin-right: 35%; */
+}
+.carDetail__my-order-content .shopping-cart p:nth-child(3) {
+  font-size: 16px;
+  font-weight: bold;
+}
+.carDetail__my-order-content .shopping-cart figure img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  /*INVESTIGAR MAS SOBRE ESTA PROPIEDAD */
+  border-radius: 24px;
+}
+.carDetail__my-order-content .summary {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.carDetail__my-order-content .summary {
+  height: 60px;
+  margin-bottom: 32px;
+}
+.carDetail__my-order-content .summary p {
+  font-weight: bold;
+}
+.carDetail .primary-button {
+  background-color: #acd9b2;
+  border-radius: 12px;
+  border: none;
+  color: #ffffff;
+  width: 100%;
+  cursor: pointer;
+  /*Para que aparezca una mano cuando estamos por encima de el*/
+  font-size: 16px;
+  font-weight: bold;
+  height: 50px;
+}
+
+@media (max-width: 640px) {
+  aside {
+    width: 100%;
+  }
+}
+.cards-container {
+  margin-top: 26px;
+  padding-inline: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  /*con repeat le estamos diciendo que queremos 2 columnas y ambas de 1fr de tamano*/
+  /*Antes era con 2 xd, pero la ticher dijo, y yo tambien pense, que necesitabamos mas de dos columnas*/
+  /*por lo tanto, se coloca en vez de dos, auto-fill, lo cual va a organizar y crear todas la columnas posibles*/
+  /*en el espacio desginado*/
+  gap: 16px;
+  /*INVESTIGAR*/
+  place-content: center;
+}
+
+.product-card {
+  width: 240px;
+  cursor: pointer;
+}
+
+.product-card img {
+  width: 240px;
+  height: 240px;
+  border-radius: 20px;
+  object-fit: cover;
+  /*Para que la imagen no quede como contraida, como peye, como fea por haberla cambiado de tamano*/
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.product-info div p:nth-child(1) {
+  font-weight: bold;
+  font-size: var(--md);
+  margin-top: 0px;
+  margin-bottom: 4;
+}
+
+.product-info div p:nth-child(2) {
+  font-size: var(--sm);
+  color: var(--very-light-pink);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.product-info figure {
+  margin: 0;
+  /*Esto se lo pone la profe teff por que a ella le aparece un margen por defecto en figure */
+  /*Lo cual impide que el icono del carrito este totalmente a la derecha, pero a mi no me pasa eso*/
+  /*sin embargo pues se lo coloco*/
+}
+
+.product-info figure img {
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width: 640px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, 240px);
+    place-items: center;
+    padding-inline: 0;
+  }
+  .product-card {
+    width: 140px;
+  }
+  .product-card img {
+    width: 140px;
+    height: 140px;
+  }
+}
+.product-detail aside {
+  width: 360px;
+  padding-bottom: 24px;
+  position: absolute;
+  right: 0;
+}
+
+.product-detail-close {
+  background-color: #ffffff;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  z-index: 2;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.product-detail-close:hover {
+  cursor: pointer;
+}
+
+.product-detail img:nth-child(2) {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 0 0 0px 20px;
+}
+
+.primary-button {
+  background-color: #acd9b2;
+  border-radius: 12px;
+  border: none;
+  color: #ffffff;
+  width: 100%;
+  cursor: pointer;
+  /*Para que aparezca una mano cuando estamos por encima de el*/
+  font-size: 16px;
+  font-weight: bold;
+  height: 50px;
+}
+
+.add-to-car-btn {
+  display: flex;
+  align-items: center;
+  /*eje y*/
+  justify-content: center;
+}
+
+.product-detail__product-info {
+  margin: 16px 16px 0 16px;
+}
+
+.product-detail__product-info p:first-child {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 0 4px 0;
+}
+
+.product-detail__product-info p:nth-child(2) {
+  color: #c7c7c7;
+  font-size: 16px;
+  margin: 0 0 20px 0;
+}
+
+.product-detail__product-info p:nth-child(3) {
+  color: #c7c7c7;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .product-detail {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

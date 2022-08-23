@@ -1,0 +1,76 @@
+.cards-container {
+    margin-top: 26px;
+    padding-inline: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    /*con repeat le estamos diciendo que queremos 2 columnas y ambas de 1fr de tamano*/
+    /*Antes era con 2 xd, pero la ticher dijo, y yo tambien pense, que necesitabamos mas de dos columnas*/
+    /*por lo tanto, se coloca en vez de dos, auto-fill, lo cual va a organizar y crear todas la columnas posibles*/
+    /*en el espacio desginado*/
+    gap: 16px;
+    /*INVESTIGAR*/
+    place-content: center;
+}
+
+.product-card {
+    width: 240px;
+    cursor: pointer;
+}
+
+.product-card img {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+    /*Para que la imagen no quede como contraida, como peye, como fea por haberla cambiado de tamano*/
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0px;
+    margin-bottom: 4;
+}
+
+.product-info div p:nth-child(2) {
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.product-info figure {
+    margin: 0;
+    /*Esto se lo pone la profe teff por que a ella le aparece un margen por defecto en figure */
+    /*Lo cual impide que el icono del carrito este totalmente a la derecha, pero a mi no me pasa eso*/
+    /*sin embargo pues se lo coloco*/
+}
+
+.product-info figure img {
+    width: 35px;
+    height: 35px;
+}
+
+@media (max-width: 640px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, 240px);
+        place-items: center;
+        padding-inline: 0;
+    }
+
+    .product-card {
+        width: 140px;
+    }
+
+    .product-card img {
+        width: 140px;
+        height: 140px;
+    }
+}
