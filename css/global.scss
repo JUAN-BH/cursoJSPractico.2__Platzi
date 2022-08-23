@@ -31,12 +31,13 @@ body {
 
 aside {
     width: 360px;
-    // padding: 24px;
+    padding-bottom: 24px;
     position: absolute;
     top: 60px;
     right: 0;
     background-color: $white;
     transition: all 0.5s;
+    box-shadow: 2px 2px 10px $very-light-pink;
 }
 
 .inactive {

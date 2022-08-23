@@ -11,11 +11,13 @@ body {
 
 aside {
   width: 360px;
+  padding-bottom: 24px;
   position: absolute;
   top: 60px;
   right: 0;
   background-color: #ffffff;
   transition: all 0.5s;
+  box-shadow: 2px 2px 10px #c7c7c7;
 }
 
 .inactive {
@@ -221,6 +223,7 @@ header {
 }
 .carDetail {
   padding: 24px;
+  box-shadow: 5px 5px 20px #c7c7c7;
 }
 .carDetail__tittle-container {
   display: flex;
@@ -270,7 +273,7 @@ header {
   /*INVESTIGAR MAS SOBRE ESTA PROPIEDAD */
   border-radius: 24px;
 }
-.carDetail__my-order-content .summary {
+.carDetail .summary {
   background-color: #f7f7f7;
   border-radius: 8px;
   display: flex;
@@ -282,11 +285,11 @@ header {
   align-items: center;
   margin-bottom: 16px;
 }
-.carDetail__my-order-content .summary {
+.carDetail .summary {
   height: 60px;
   margin-bottom: 32px;
 }
-.carDetail__my-order-content .summary p {
+.carDetail .summary p {
   font-weight: bold;
 }
 .carDetail .primary-button {
